@@ -1,3 +1,3 @@
 <x-layout>
-    <p>hellow</p>
+    wlecome home
 </x-layout>
