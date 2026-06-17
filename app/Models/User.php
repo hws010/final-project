@@ -34,7 +34,7 @@ class User extends Authenticatable
         ];
     }
 
-    public function tickets(): HasMany
+    public function ideas(): HasMany
     {
         return $this->hasMany(Idea::class);
     }

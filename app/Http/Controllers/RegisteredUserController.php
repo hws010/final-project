@@ -27,6 +27,6 @@ class RegisteredUserController extends Controller
 
         Auth::login($user);
 
-        return redirect('/')->with('seccess', 'account is created and you are loged in');
+        return redirect('/')->with('success', 'account is created and you are loged in');
     }
 }

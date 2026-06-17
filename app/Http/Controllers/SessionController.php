@@ -21,7 +21,7 @@ class SessionController extends Controller
         if(Auth::attempt($validate)){
             $request->session()->regenerate();
             
-            return redirect('/')->with('seccess', 'you are loged in');
+            return redirect('/')->with('success', 'you are loged in');
         }
 
         return redirect()->back()->withErrors(['password' => 'your creds are wrong!']);
@@ -33,6 +33,6 @@ class SessionController extends Controller
         $request->session()->invalidate();
         $request->session()->regenerate();
 
-        return redirect('/');
+        return redirect('/')->with(['success' => 'you are logged out']);
     }
 }
