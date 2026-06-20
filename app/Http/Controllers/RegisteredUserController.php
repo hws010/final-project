@@ -7,16 +7,17 @@ namespace App\Http\Controllers;
 use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
-use Illuminate\Support\Facades\Hash;
 use Illuminate\Validation\Rule;
 
 class RegisteredUserController extends Controller
 {
-    public function create(){
+    public function create()
+    {
         return view('auth.register');
     }
 
-    public function store(Request $request){
+    public function store(Request $request)
+    {
         $validate = $request->validate([
             'name' => ['required', 'min:3', 'max:25'],
             'email' => ['email', 'required', 'max:25', Rule::unique('users', 'email')],
